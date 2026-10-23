@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f6f2">
+  <meta name="description" content="Learn practical English grammar and everyday vocabulary with Hindi translations and examples.">
+  <title>Sayso — English practice</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Main navigation">
+      <a class="brand" href="#grammar" aria-label="Sayso home">
+        <span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span>
+        <span>sayso<span class="brand-period">.</span></span>
+      </a>
+
+      <div class="sidebar-label">YOUR SPACE</div>
+      <nav class="nav-list">
+        <button class="nav-item is-active" type="button" data-view="grammar" aria-label="Grammar guide" aria-current="page">
+          <i data-lucide="book-open" aria-hidden="true"></i><span>Grammar guide</span>
+        </button>
+        <button class="nav-item" type="button" data-view="vocabulary" aria-label="Vocabulary guide">
+          <i data-lucide="library" aria-hidden="true"></i><span>Vocabulary</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="streak-note"><span class="streak-spark" aria-hidden="true">✳</span><span><strong>Learn a little every day.</strong><small>Simple English, useful everywhere.</small></span></div>
+      </div>
+    </aside>
+
+    <main class="workspace">
+      <header class="topbar">
+        <div class="breadcrumb"><span>MY ENGLISH</span><i data-lucide="chevron-right" aria-hidden="true"></i><strong id="page-label">Grammar guide</strong></div>
+      </header>
+
+      <section class="view learning-view" id="grammar-view" aria-labelledby="grammar-title">
+        <div class="learning-column grammar-column">
+          <div class="view-heading learning-heading">
+            <div>
+              <div class="eyebrow"><span class="eyebrow-line"></span> EVERYDAY ENGLISH, MADE CLEAR</div>
+              <h1 id="grammar-title">Grammar for <em>real conversations.</em></h1>
+              <p class="heading-copy">Choose a topic for a quick explanation and examples you can use in everyday life.</p>
+            </div>
+          </div>
+          <div class="grammar-level-tabs" id="grammar-level-tabs" role="tablist" aria-label="Grammar level"></div>
+          <div class="grammar-tabs" id="grammar-tabs" role="tablist" aria-label="Grammar topics"></div>
+          <div class="grammar-tabs tense-tabs" id="tense-tabs" role="tablist" aria-label="Tense lessons" hidden></div>
+          <section class="grammar-content" id="grammar-content" role="tabpanel" aria-live="polite"></section>
+          <p class="grammar-footnote"><i data-lucide="sparkles" aria-hidden="true"></i> Learn one useful pattern, then check your understanding.</p>
+        </div>
+      </section>
+
+      <section class="view learning-view vocabulary-view" id="vocabulary-view" aria-labelledby="vocabulary-title" hidden>
+        <div class="learning-column vocabulary-column">
+          <div class="view-heading learning-heading">
+            <div>
+              <div class="eyebrow"><span class="eyebrow-line"></span> WORDS YOU CAN USE TODAY</div>
+              <h1 id="vocabulary-title">Build your everyday <em>vocabulary.</em></h1>
+              <p class="heading-copy">Learn useful conversation words, verb forms, adjectives, and adverbs with natural examples.</p>
+            </div>
+          </div>
+          <div class="vocabulary-tools">
+            <label class="visually-hidden" for="vocabulary-search">Search vocabulary</label>
+            <input class="vocabulary-search" id="vocabulary-search" type="search" placeholder="Search words…" autocomplete="off">
+            <label class="visually-hidden" for="vocabulary-subtopic">Vocabulary subtopic</label>
+            <select class="vocabulary-filter" id="vocabulary-subtopic" aria-label="Vocabulary subtopic">
+              <option value="all">All subtopics</option>
+            </select>
+            <label class="visually-hidden" for="vocabulary-part-of-speech">Part of speech</label>
+            <select class="vocabulary-filter" id="vocabulary-part-of-speech" aria-label="Part of speech">
+              <option value="all">All word types</option>
+              <option value="noun">Nouns</option>
+              <option value="verb">Verbs</option>
+              <option value="adjective">Adjectives</option>
+              <option value="adverb">Adverbs</option>
+              <option value="phrase">Phrases</option>
+            </select>
+            <span class="vocabulary-count" id="vocabulary-count" aria-live="polite"></span>
+          </div>
+          <div class="grammar-tabs" id="vocabulary-tabs" role="tablist" aria-label="Vocabulary categories"></div>
+          <section class="grammar-content vocabulary-content" id="vocabulary-content" role="tabpanel" aria-live="polite"></section>
+          <p class="grammar-footnote"><i data-lucide="sparkles" aria-hidden="true"></i> Learn a word, then try it in your own sentence.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
